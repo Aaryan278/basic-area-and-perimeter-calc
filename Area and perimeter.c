@@ -14,7 +14,7 @@ int main() {
 
     if (strcmp(inputap, "Area") == 0 || strcmp(inputap, "area") == 0)
     { // IF AREA CHOSEN
-        printf("What shapes area would you like to calculate? Options: Circle, Rectangle and Square.\n");
+        printf("What shapes area would you like to calculate? Options: Circle, Rectangle, Square, Triangle and Hexagon.\n");
         scanf("%14s", &shape_select); // gets shape
 
         if (strcmp(shape_select, "Circle") == 0 || strcmp(shape_select, "circle") == 0)
@@ -46,14 +46,21 @@ int main() {
             scanf("%lf", &num1);
 
             printf("Enter the length of the base of the triangle:\n");
-            scanf("%lf", &num1);
+            scanf("%lf", &num2);
 
             printf("The area of the triangle is: %lf", (num1*num2)/2);
+        } else if (strcmp(shape_select, "Hexagon") ==0 || strcmp(shape_select, "hexagon") == 0)
+        {
+            printf("Enter the length of one side of the hexagon:\n");
+            scanf("%lf", &num1);
+
+            printf("The area of the hexagon is approximately: %lf", (3 * sqrt(3)/2)*pow(num1, 2));
         }
+        
         
     } else if (strcmp(inputap, "Perimeter") == 0 || strcmp(inputap, "perimeter") == 0) 
     { // IF PERIMETER CHOSEN
-        printf("What shapes perimeter would you like to calculate? Options: Circle, Rectangle and Square.\n");
+        printf("What shapes perimeter would you like to calculate? Options: Circle, Rectangle, Square, Triangle, Hexagon.\n");
         scanf("%14s", &shape_select);
 
     if (strcmp(shape_select, "Circle") == 0 || strcmp(shape_select, "circle") == 0)
@@ -91,7 +98,14 @@ int main() {
             scanf("%lf", &num3);
 
             printf("The perimeter of the triangle is: %lf", num1+num2+num3);
+        } else if ((strcmp(shape_select, "Hexagon") ==0 || strcmp(shape_select, "hexagon") == 0))
+        {
+            printf("Enter the length of one side:\n");
+            scanf("%lf", &num1);
+
+            printf("The perimeter of the hexagon is: %lf", num1*6);
         }
+        
 
     } else
     {
