@@ -43,8 +43,34 @@ int main() {
         }
     } else if (strcmp(inputap, "Perimeter") == 0 || strcmp(inputap, "perimeter") == 0) 
     { // IF PERIMETER CHOSEN
-        printf("What shapes area would you like to calculate? Options: Circle, Rectangle and Square.\n");
+        printf("What shapes perimeter would you like to calculate? Options: Circle, Rectangle and Square.\n");
         scanf("%14s", &shape_select);
+
+    if (strcmp(shape_select, "Circle") == 0 || strcmp(shape_select, "circle") == 0)
+        { // If circle is chosen:
+            printf("Enter the radius of the circle:\n");
+            scanf("%lf", &num1);
+
+            num2 = 2*PI*num1; // calculates perimeter and assigns to num2
+            printf("The perimeter of the circle is approximately: %lf", num2);
+
+        } else if (strcmp(shape_select, "Rectangle") == 0 || strcmp(shape_select, "rectangle") == 0)
+        {
+            printf("Enter the length of the rectangle:\n");
+            scanf("%lf", &num1);
+
+            printf("Enter the width of the rectangle:\n");
+            scanf("%lf", &num2);
+
+            printf("The perimeter of the rectangle is: %lf", 2*(num1+num2)); // calculates and prints perimeter
+        } else if (strcmp(shape_select, "Square") == 0 || strcmp(shape_select, "square") == 0)
+        {
+            printf("Enter the length of the square:\n");
+            scanf("%lf", &num1);
+            
+            printf("The perimeter of the square is: %lf", num1 * 4); // calculates perimeter of square and prints
+        }
+
     } else
     {
         printf("Error: Invalid selection.");
