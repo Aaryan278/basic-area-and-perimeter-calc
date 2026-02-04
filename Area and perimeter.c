@@ -7,7 +7,7 @@
 int main() {
     char shape_select[15];
     char inputap[15];
-    double num1, num2;
+    double num1, num2, num3;
 
     printf("What will you like to calculate? Options: Area or Perimeter.\n");
     scanf("%14s", &inputap); // gets area or perimeter
@@ -40,7 +40,17 @@ int main() {
             scanf("%lf", &num1);
             
             printf("The area of the square is: %lf", num1 * num1);
+        } else if (strcmp(shape_select, "Triangle") ==0 || strcmp(shape_select, "triangle") == 0)
+        {
+            printf("Enter the height of the triangle:\n");
+            scanf("%lf", &num1);
+
+            printf("Enter the length of the base of the triangle:\n");
+            scanf("%lf", &num1);
+
+            printf("The area of the triangle is: %lf", (num1*num2)/2);
         }
+        
     } else if (strcmp(inputap, "Perimeter") == 0 || strcmp(inputap, "perimeter") == 0) 
     { // IF PERIMETER CHOSEN
         printf("What shapes perimeter would you like to calculate? Options: Circle, Rectangle and Square.\n");
@@ -69,6 +79,18 @@ int main() {
             scanf("%lf", &num1);
             
             printf("The perimeter of the square is: %lf", num1 * 4); // calculates perimeter of square and prints
+        } else if (strcmp(shape_select, "Triangle") == 0 || strcmp(shape_select, "triangle") == 0)
+        {
+            printf("Enter the length of one side:\n");
+            scanf("%lf", &num1);
+
+            printf("Enter the length of the second side:\n");
+            scanf("%lf", &num2);
+
+            printf("Enter the length of the third side:\n");
+            scanf("%lf", &num3);
+
+            printf("The perimeter of the triangle is: %lf", num1+num2+num3);
         }
 
     } else
